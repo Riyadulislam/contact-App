@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactAdd = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -14,7 +16,16 @@ const ContactAdd = () => {
               })
               .then((response) => response.json())
               .then((data) => {
+               
+                if(data.acknowledged===true)
+                {
+                    
+                    toast("Name and Number Added Successfully");
+                   
+                    
+                }
                 console.log('Success:', data);
+                
              
               })
               .catch((error) => {
@@ -35,6 +46,7 @@ const ContactAdd = () => {
 <input type="phone" placeholder="phone"  className="input w-full input-bordered"
 {...register("number")} />
 <input type="submit" className=' btn btn-accent w-full mb-10' value="Submit" />
+<ToastContainer />
 </form>
 </div>
             
