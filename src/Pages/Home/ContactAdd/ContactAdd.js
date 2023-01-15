@@ -39,11 +39,11 @@ const ContactAdd = () => {
 
 <h3 className=" text-center text-lg font-bold"></h3>
 <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 gap-3 mt-10'>
-<input type="firstName" placeholder="First Name"className="input w-full input-bordered"
+<input type="firstName"  required="required"  placeholder="First Name"className="input w-full input-bordered"
 {...register("firstName")} />
-<input type="lastName" placeholder="Last Name"className="input w-full input-bordered"
+<input type="lastName"  required="required"  placeholder="Last Name"className="input w-full input-bordered"
 {...register("lastName")} />
-<input type="phone" placeholder="phone"  className="input w-full input-bordered"
+<input type="phone" placeholder="phone" required="required"  className="input w-full input-bordered"
 {...register("number")} />
 <input type="submit" className=' btn btn-accent w-full mb-10' value="Submit" />
 <ToastContainer />

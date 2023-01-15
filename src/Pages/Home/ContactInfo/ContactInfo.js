@@ -10,9 +10,18 @@ const ContactInfo = () => {
     },[])
    
     return (
-        <div className='text-center'>
+        <div>
+            {
+                contact.length==0 ?
+                <div className="flex justify-center items-center mb-10">
+                <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full " role="status">
+                  <span className="visually-hidden"></span>
+                </div>
+              </div>
+              :
+              <div className='text-center'>
             <h1 className='font-bold text-2xl'>All contact Information</h1>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mt-5">
   <table className="table w-full">
  
     <thead>
@@ -42,6 +51,11 @@ const ContactInfo = () => {
 </div>
             
         </div>
+    
+              
+            }
+    </div>
+        
     );
 };
 
