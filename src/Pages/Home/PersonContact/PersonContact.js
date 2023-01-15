@@ -34,10 +34,12 @@ const PersonContact = () => {
       signInWithPhoneNumber(authentication,phoneNumber, appVerifier)
       .then((confirmationResult) => {
         const userInfo={
+          name:firstName+lastName,
           number:phoneNumber,
           date,
           time
         }
+        console.log(userInfo)
         saveNumberAndDate(userInfo);
      
         window.confirmationResult = confirmationResult;

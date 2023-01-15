@@ -18,7 +18,7 @@ const ContactInfo = () => {
     <thead>
       <tr>
         <th>List</th>
-        <th>Number</th>
+        <th>Name</th>
         <th>Time</th>
         <th>Date</th>
        
@@ -28,7 +28,7 @@ const ContactInfo = () => {
 {
     contact.map((contactList,i)=><tr key={i}>
                         <th>{i+1}</th>
-                        <td>{contactList.number}</td>
+                        <td>{contactList.name}</td>
                         <td>{contactList.time}</td>
                          <td>{contactList.date}</td>
                     
