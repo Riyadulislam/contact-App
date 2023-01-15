@@ -41,38 +41,9 @@ const Contactlist = () => {
     </tbody>
   </table>
 </div>
-    //     <div>
-
-           
-    //        <div>
-    //          <div className="overflow-x-auto">
-    //     <table className="table w-full">
-       
-    //       <thead>
-    //         <tr>
-    //           <th></th>
-    //           <th>Name</th>
-    //           <th>Email</th>
-    //           <th>Delete</th>
-           
-    //         </tr>
-    //       </thead>
-    //       <tbody>
-    //         {
-    //             contact.map((contactList,i)=>  <tr key={i}>
-    //                 <th>{i+1}</th>
-    //                 <td>{contactList.firstName}</td>
-    //                 <td>{contactList.lastName}</td>
-    //                 <td><Link><button>Contact Detail</button></Link></td>
-    //               </tr>)
-    //         }
+    
          
-          
-    //       </tbody>
-    //     </table>
-    //   </div>
-    //     </div>
-    //     </div>
+  
     );
 };
 

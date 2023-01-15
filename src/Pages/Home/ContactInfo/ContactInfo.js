@@ -4,7 +4,7 @@ const ContactInfo = () => {
     const [contact,setContact]=useState([])
      
     useEffect(()=>{
-        fetch('http://localhost:5000/dateinfo')
+        fetch('https://contact-web-pi.vercel.app/dateinfo')
         .then(res=>res.json())
         .then(data=>setContact(data))
     },[])
