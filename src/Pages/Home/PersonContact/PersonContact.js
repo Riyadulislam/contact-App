@@ -10,6 +10,9 @@ const PersonContact = () => {
 
     const contact=useLoaderData()
     const {idlist,number,firstName,lastName}=contact
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+ 
     const genarateRecptcha=()=>{
       window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
         'size': 'invisible',
@@ -20,42 +23,51 @@ const PersonContact = () => {
       }, authentication);
     }
 
-    const onSubmit = data =>{ 
-      console.log(data.phone)
+    const onSubmit = data =>{   
+    console.log(date)
       const phoneNumber=data.phone;
       genarateRecptcha();
       const appVerifier= window.recaptchaVerifier
       signInWithPhoneNumber(authentication,phoneNumber, appVerifier)
       .then((confirmationResult) => {
+        const userInfo={
+          number:phoneNumber,
+          date
+        }
+        saveNumberAndDate(userInfo);
         // SMS sent. Prompt user to type the code from the message, then sign the
         // user in with confirmationResult.confirm(code).
         window.confirmationResult = confirmationResult;
         console.log(confirmationResult)
         // ...
+      
       }).catch((error) => {
         // Error; SMS not sent
         // ...
         console.log(error)
       });
-
-        // fetch('http://localhost:5000/mobile', {
-        //     method: 'POST', // or 'PUT'
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data),
-        //   })
-        //   .then((response) => response.json())
-        //   .then((data) => {
-        //     console.log('Success:', data);
-         
-        //   })
-        //   .catch((error) => {
-        //     console.error('Error:', error);
-        //   });
+    
+    
      }
+     const saveNumberAndDate=(body)=>{
+      fetch('http://localhost:5000/mobile', {
+        method: 'POST', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+     }
+    
  
-  
+    
   
     return (
         <div className='text-center'>
@@ -68,6 +80,7 @@ const PersonContact = () => {
 {...register("firstName")} /> */}
 <input type="phone"   placeholder={number}  className="input w-full input-bordered"
 {...register("phone")} />
+<p>{date}</p>
 
 <input type="submit" className=' btn btn-accent w-full mb-10' value="messege sent" />
 <div id="recaptcha-container"></div>
