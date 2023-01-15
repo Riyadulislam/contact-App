@@ -28,7 +28,7 @@ const router =createBrowserRouter(
                 {
                     path:'/personcontact/:id',
                     element:<PersonContact></PersonContact>,
-                    loader:({params})=>fetch(`http://localhost:5000/contactList/${params.id}`)
+                    loader:({params})=>fetch(`https://contact-web-pi.vercel.app/contactList/${params.id}`)
                 }
             ]
         }

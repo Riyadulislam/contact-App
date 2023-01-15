@@ -5,7 +5,7 @@ const ContactAdd = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data =>{
         console.log(data)
-        fetch('http://localhost:5000/contactAdd', {
+        fetch('https://contact-web-pi.vercel.app/contactAdd', {
                 method: 'POST', // or 'PUT'
                 headers: {
                   'Content-Type': 'application/json',

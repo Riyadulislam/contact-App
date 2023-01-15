@@ -6,7 +6,7 @@ const Contactlist = () => {
     const [contact,setContact]=useState([])
     
     useEffect(()=>{
-            fetch('http://localhost:5000/contactList')
+            fetch('https://contact-web-pi.vercel.app/contactList')
             .then(res=>res.json())
             .then(data=>setContact(data))
         },[])
