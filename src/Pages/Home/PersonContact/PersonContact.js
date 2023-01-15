@@ -10,6 +10,10 @@ const PersonContact = () => {
 
     const contact=useLoaderData()
     const {idlist,number,firstName,lastName}=contact
+    const  today = new Date(),
+      time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+   
+    
     const current = new Date();
     const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
  
@@ -32,7 +36,8 @@ const PersonContact = () => {
       .then((confirmationResult) => {
         const userInfo={
           number:phoneNumber,
-          date
+          date,
+          time
         }
         saveNumberAndDate(userInfo);
         // SMS sent. Prompt user to type the code from the message, then sign the
@@ -80,7 +85,7 @@ const PersonContact = () => {
 {...register("firstName")} /> */}
 <input type="phone"   placeholder={number}  className="input w-full input-bordered"
 {...register("phone")} />
-<p>{date}</p>
+
 
 <input type="submit" className=' btn btn-accent w-full mb-10' value="messege sent" />
 <div id="recaptcha-container"></div>
