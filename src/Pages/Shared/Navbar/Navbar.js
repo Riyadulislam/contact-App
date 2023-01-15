@@ -6,9 +6,6 @@ const Navbar = () => {
      <li><Link to='/contactAdd'>Add Contact</Link></li>
     <li><Link to='/contactlist'>Contact List</Link></li>
     <li><Link to='/contactinfo'>Contact Info</Link></li>
-   
-    
-   
 
 </React.Fragment>
 
