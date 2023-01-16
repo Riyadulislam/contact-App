@@ -86,7 +86,7 @@ const PersonContact = () => {
 
         <h3 className=" text-center text-lg font-bold"></h3>
         <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 gap-3 mt-10'>
-        
+
           <input type="phone" required="required" placeholder={number} className="input w-full input-bordered"
             {...register("phone")} />
 

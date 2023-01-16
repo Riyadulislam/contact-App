@@ -5,6 +5,7 @@ import ListOfContact from '../ListOfContact/ListOfContact';
 const Home = () => {
     return (
         <div className='flex justify-evenly'>
+            
             <ListOfContact></ListOfContact>
             <ContactInfo></ContactInfo>
             
